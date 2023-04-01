@@ -40,6 +40,15 @@ export class App extends Component {
     });
   };
 
+  componentDidMount() {
+    const storageContacts = JSON.parse(localStorage.getItem('contacts'));
+    if (storageContacts) {
+      this.setState({
+        contacts: storageContacts,
+      });
+    }
+  }
+
   componentDidUpdate(prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
