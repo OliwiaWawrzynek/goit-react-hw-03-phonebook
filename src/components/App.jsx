@@ -40,7 +40,6 @@ export class App extends Component {
     });
   };
 
-  
   componentDidMount() {
     const storageContacts = JSON.parse(localStorage.getItem('contacts'));
     if (storageContacts) {
